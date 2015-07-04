@@ -1,0 +1,39 @@
+<dom-module id="project-list">
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+  <template>
+    <ul>
+      <template is="dom-repeat" items="{{items}}">
+        <li><span class="paper-font-body1"><a href="{{item.link}}">{{item.name}}</a></span></li>
+      </template>
+    </ul>
+  </template>
+</dom-module>
+<script>
+  (function () {
+    Polymer({
+      is: 'project-list',
+      properties: {
+        items: {
+          type: Array,
+          notify: true,
+        }
+      },
+      ready: function() {
+        this.items = [
+          {
+            name: "My sister's wedding website",
+            link: "http://slaintetomattandmj.com"
+          },
+          {
+            name: "Junior Project: Henry",
+            link: "https://github.com/RHITJuniorProjects/JrProj-1415-Mike"
+          }
+        ];
+      }
+    });
+  })();
+</script>
